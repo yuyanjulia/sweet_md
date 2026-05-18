@@ -15,9 +15,9 @@ MUTANT_PDB=$(cat mutant_pdb.txt)
 echo "==> Using mutant PDB: $MUTANT_PDB"
 
 # ── 2. pdb2gmx ────────────────────────────────────────────────────────────────
-# Selections: 8 = CHARMM-36m force field, 1 = TIP3P water model
+# Selections: 1 = CHARMM-36m force field, 1 = TIP3P water model
 echo "==> Running pdb2gmx..."
-printf "8\n1\n" | gmx pdb2gmx -f "$MUTANT_PDB" -o brazzein_processed.gro -ignh
+printf "1\n1\n" | gmx pdb2gmx -f "$MUTANT_PDB" -o brazzein_processed.gro -ignh
 
 # ── 3. Box & solvation ────────────────────────────────────────────────────────
 echo "==> Setting up simulation box..."
